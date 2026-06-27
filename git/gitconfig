@@ -1,0 +1,15 @@
+# 공용 git 설정. 이름/이메일은 ~/.gitconfig.local 에서 (gitignore, 머신별).
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
+[include]
+	path = ~/.gitconfig.local
+# 특정 디렉토리에서 다른 이메일을 쓰려면 ~/.gitconfig.work 만들고 아래 주석 해제:
+# [includeIf "gitdir:~/Work/"]
+#	path = ~/.gitconfig.work
